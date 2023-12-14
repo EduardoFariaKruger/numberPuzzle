@@ -65,7 +65,7 @@ void printBoard(int board[MAX][MAX])
 
 
 
-main()
+int main()
 {
     srand(0);
     int board[MAX][MAX];
