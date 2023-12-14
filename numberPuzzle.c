@@ -40,6 +40,7 @@ void initializeBoard(int board[MAX][MAX])
     int size = MAX*MAX;
     int array[MAX*MAX];
 
+    initializeArray(array);
     for(int i = 0; i < MAX; i++)
     {
         for(int j = 0; j < MAX; j++)
