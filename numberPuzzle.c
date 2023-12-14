@@ -168,7 +168,8 @@ void numberPuzzle(int board[MAX][MAX])
 int main()
 {
     srand(0);
-
+    int board[MAX][MAX];
+    numberPuzzle(board);
 
     return 0;
 }
