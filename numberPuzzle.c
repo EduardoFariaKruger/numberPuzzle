@@ -69,12 +69,12 @@ void swap(int board[MAX][MAX], struct coordinates *zero, int x, int y)
     struct coordinates position;
     position.x = x;
     position.y = y;
-    if(isInRange(position))
+    if (isInRange(position))
     {
         int temp;
-        temp = board[zero->x][zero->y];
-        board[zero->x][zero->y] = board[x][y];
-        board[x][y] = temp;
+        temp = board[zero->y][zero->x];
+        board[zero->y][zero->x] = board[y][x];
+        board[y][x] = temp;
         zero->x = x;
         zero->y = y;
     }
@@ -130,16 +130,18 @@ void numberPuzzle(int board[MAX][MAX])
 
     int key;
 
-    while (!isInOrder(board)) {
+    while (!isInOrder(board))
+    {
         key = getch();
-        switch (key) {
+        switch (key)
+        {
             case KEY_UP:
-                swap(board, &zero, zero.x, zero.y + 1);
+                swap(board, &zero, zero.x, zero.y - 1);
                 printBoard(board);
                 printf("Seta para cima pressionada.\n");
                 break;
             case KEY_DOWN:
-                swap(board, &zero, zero.x, zero.y - 1);
+                swap(board, &zero, zero.x, zero.y + 1);
                 printBoard(board);
                 printf("Seta para baixo pressionada.\n");
                 break;
@@ -149,7 +151,7 @@ void numberPuzzle(int board[MAX][MAX])
                 printf("Seta para esquerda pressionada.\n");
                 break;
             case KEY_RIGHT:
-                swap(board, &zero, zero.x + 1, zero.y + 1);
+                swap(board, &zero, zero.x + 1, zero.y);
                 printBoard(board);
                 printf("Seta para direita pressionada.\n");
                 break;
