@@ -80,47 +80,6 @@ void swap(int board[MAX][MAX], struct coordinates *zero, int x, int y)
     }
 }
 
-void numberPuzzle(int board[MAX][MAX])
-{   
-    initializeBoard(board);
-    printBoard(board);
-    struct coordinates zero = findZero(board);
-
-    initscr();
-    keypad(stdscr, TRUE);
-    timeout(0);
-
-    int key;
-
-    while (!isInOrder(board)) {
-        key = getch();
-        switch (tecla) {
-            case KEY_UP:
-                swap(board, &zero, zero.x, zero.y + 1);
-                printBoard(board);
-                printf("Seta para cima pressionada.\n");
-                break;
-            case KEY_DOWN:
-                swap(board, &zero, zero.x, zero.y - 1);
-                printBoard(board);
-                printf("Seta para baixo pressionada.\n");
-                break;
-            case KEY_LEFT:
-                swap(board, &zero, zero.x - 1, zero.y);
-                printBoard(board);
-                printf("Seta para esquerda pressionada.\n");
-                break;
-            case KEY_RIGHT:
-                swap(board, &zero, zero.x + 1, zero.y + 1);
-                printBoard(board);
-                printf("Seta para direita pressionada.\n");
-                break;
-        }
-    }
-
-    endwin();
-
-}
 
 int randomizeNumber(int array[], int *size)
 {
@@ -159,6 +118,49 @@ void printBoard(int board[MAX][MAX])
     }
     printf("\n");
 }
+
+void numberPuzzle(int board[MAX][MAX])
+{   
+    initializeBoard(board);
+    printBoard(board);
+    struct coordinates zero = findZero(board);
+
+    initscr();
+    keypad(stdscr, TRUE);
+    timeout(0);
+
+    int key;
+
+    while (!isInOrder(board)) {
+        key = getch();
+        switch (key) {
+            case KEY_UP:
+                swap(board, &zero, zero.x, zero.y + 1);
+                printBoard(board);
+                printf("Seta para cima pressionada.\n");
+                break;
+            case KEY_DOWN:
+                swap(board, &zero, zero.x, zero.y - 1);
+                printBoard(board);
+                printf("Seta para baixo pressionada.\n");
+                break;
+            case KEY_LEFT:
+                swap(board, &zero, zero.x - 1, zero.y);
+                printBoard(board);
+                printf("Seta para esquerda pressionada.\n");
+                break;
+            case KEY_RIGHT:
+                swap(board, &zero, zero.x + 1, zero.y + 1);
+                printBoard(board);
+                printf("Seta para direita pressionada.\n");
+                break;
+        }
+    }
+
+    endwin();
+
+}
+
 
 
 
