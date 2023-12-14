@@ -1,7 +1,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <time.h>
-#include <ncurser.h>
+#include <ncurses.h>
 
 #define MAX 3
 
