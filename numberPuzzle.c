@@ -112,10 +112,10 @@ void printBoard(int board[MAX][MAX])
     {
         for(int j = 0; j < MAX; j++)
         {
-            printf("%d ", board[i][j]);
+            printw("%d ", board[i][j]);
         }
     }
-    printf("\n");
+    printw("\n");
 }
 
 void numberPuzzle(int board[MAX][MAX])
@@ -136,24 +136,28 @@ void numberPuzzle(int board[MAX][MAX])
         switch (key)
         {
             case KEY_UP:
+                printf("\e[1;1H\e[2J"); 
                 swap(board, &zero, zero.x, zero.y - 1);
                 printBoard(board);
-                printf("Seta para cima pressionada.\n");
+                printw("Seta para cima pressionada.\n");
                 break;
             case KEY_DOWN:
+                printf("\e[1;1H\e[2J"); 
                 swap(board, &zero, zero.x, zero.y + 1);
                 printBoard(board);
-                printf("Seta para baixo pressionada.\n");
+                printw("Seta para baixo pressionada.\n");
                 break;
             case KEY_LEFT:
+                printf("\e[1;1H\e[2J"); 
                 swap(board, &zero, zero.x - 1, zero.y);
                 printBoard(board);
-                printf("Seta para esquerda pressionada.\n");
+                printw("Seta para esquerda pressionada.\n");
                 break;
             case KEY_RIGHT:
+                printf("\e[1;1H\e[2J"); 
                 swap(board, &zero, zero.x + 1, zero.y);
                 printBoard(board);
-                printf("Seta para direita pressionada.\n");
+                printw("Seta para direita pressionada.\n");
                 break;
         }
     }
