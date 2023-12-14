@@ -52,7 +52,7 @@ struct coordinates findZero(int board[MAX][MAX])
     struct coordinates zero;
     for (int i = 0; i < MAX; i++)
     {
-        for(int j = 0; j < MAX, j++)
+        for(int j = 0; j < MAX; j++)
         {
             if (board[i][j] == 0)
             {
@@ -72,8 +72,8 @@ void swap(int board[MAX][MAX], struct coordinates *zero, int x, int y)
     if(isInRange(position))
     {
         int temp;
-        temp = board[zero.x][zero.y];
-        board[zero.x][zero.y] = board[x][y];
+        temp = board[zero->x][zero->y];
+        board[zero->x][zero->y] = board[x][y];
         board[x][y] = temp;
         zero->x = x;
         zero->y = y;
@@ -81,8 +81,7 @@ void swap(int board[MAX][MAX], struct coordinates *zero, int x, int y)
 }
 
 void numberPuzzle(int board[MAX][MAX])
-{
-    int board[MAX][MAX];
+{   
     initializeBoard(board);
     printBoard(board);
     struct coordinates zero = findZero(board);
