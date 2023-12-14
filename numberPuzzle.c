@@ -109,16 +109,16 @@ void initializeBoard(int board[MAX][MAX])
 
 void printBoard(int board[MAX][MAX])
 {
-    clear(); // Limpa a tela antes de imprimir a matriz
+    clear(); 
     for (int i = 0; i < MAX; i++)
     {
         for (int j = 0; j < MAX; j++)
         {
-            printw("%d ", board[i][j]); // Use printw em vez de printf
+            printw("%d ", board[i][j]);
         }
         printw("\n");
     }
-    refresh(); // Atualiza a tela
+    refresh();
 }
 
 void numberPuzzle(int board[MAX][MAX])
@@ -138,26 +138,31 @@ void numberPuzzle(int board[MAX][MAX])
         key = getch();
         switch (key)
         {
-            case KEY_UP:
+            case KEY_DOWN:
                 swap(board, &zero, zero.x, zero.y - 1);
                 printBoard(board);
                 printw("Seta para cima pressionada.\n");
                 break;
-            case KEY_DOWN:
+            case KEY_UP:
                 swap(board, &zero, zero.x, zero.y + 1);
                 printBoard(board);
                 printw("Seta para baixo pressionada.\n");
                 break;
-            case KEY_LEFT:
+            case KEY_RIGHT:
                 swap(board, &zero, zero.x - 1, zero.y);
                 printBoard(board);
                 printw("Seta para esquerda pressionada.\n");
                 break;
-            case KEY_RIGHT:
+            case KEY_LEFT:
                 swap(board, &zero, zero.x + 1, zero.y);
                 printBoard(board);
                 printw("Seta para direita pressionada.\n");
                 break;
+            case 27:
+                printBoard(board);
+                printw("Não foi dessa vez :(");
+                endwin();
+
         }
     }
 
