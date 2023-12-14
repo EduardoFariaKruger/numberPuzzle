@@ -112,9 +112,8 @@ void printBoard(int board[MAX][MAX])
     {
         for(int j = 0; j < MAX; j++)
         {
-            printf("%d", board[i][j]);
+            printf("%d ", board[i][j]);
         }
-        printf("\n");
     }
     printf("\n");
 }
