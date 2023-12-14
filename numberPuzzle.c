@@ -15,7 +15,7 @@ struct coordinates
 
 int isInRange(struct coordinates coordinates)
 {
-    return (coordinates.x > 0 && coordinates.x < MAX) && (coordinates.y > 0 && coordinates.y < MAX);
+    return (coordinates.x >= 0 && coordinates.x < MAX) && (coordinates.y >= 0 && coordinates.y < MAX);
 }
 
 void initializeArray(int array[])
