@@ -64,11 +64,12 @@ struct coordinates findZero(int board[MAX][MAX])
     }
 }
 
-void swap(int board[MAX][MAX], struct coordinates *zero, int y, int x)
+void swap(int board[MAX][MAX], struct coordinates *zero, int x, int y)
 {
     struct coordinates position;
     position.x = x;
     position.y = y;
+
     if (isInRange(position))
     {
         int temp;
